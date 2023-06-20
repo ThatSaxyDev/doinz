@@ -64,9 +64,9 @@ class CounterViewController extends StateNotifier<double> {
           _ref.read(counterListControllerProvider.notifier).addToList(
                 action: 'added',
                 type: 'to',
-                influence: influencingNumber.toString(),
-                stateFRom: state.toString(),
-                statee: (state - influencingNumber).toString(),
+                influence: influencingNumber,
+                stateFRom: state,
+                statee: state - influencingNumber,
               );
           break;
         case 'subtract':
@@ -74,9 +74,9 @@ class CounterViewController extends StateNotifier<double> {
           _ref.read(counterListControllerProvider.notifier).addToList(
                 action: 'subtracted',
                 type: 'from',
-                influence: influencingNumber.toString(),
-                stateFRom: state.toString(),
-                statee: (state + influencingNumber).toString(),
+                influence: influencingNumber,
+                stateFRom: state,
+                statee: state + influencingNumber,
               );
           break;
         default:
@@ -98,9 +98,9 @@ class CounterViewController extends StateNotifier<double> {
           _ref.read(counterListControllerProvider.notifier).addToList(
                 action: 'subtracted',
                 type: 'from',
-                influence: (influencingNumber - state).toString(),
-                stateFRom: state.toString(),
-                statee: (influencingNumber).toString(),
+                influence: influencingNumber - state,
+                stateFRom: state,
+                statee: influencingNumber,
               );
           break;
         case 'divide by':
@@ -112,11 +112,25 @@ class CounterViewController extends StateNotifier<double> {
             );
           } else {
             state = state / influencingNumber;
+            _ref.read(counterListControllerProvider.notifier).addToList(
+                  action: 'divided',
+                  type: 'by',
+                  influence: influencingNumber * state,
+                  stateFRom: state,
+                  statee: influencingNumber,
+                );
           }
 
           break;
         case 'multiply by':
           state = state * influencingNumber;
+          _ref.read(counterListControllerProvider.notifier).addToList(
+                action: 'multiplied',
+                type: 'by',
+                influence: state / influencingNumber,
+                stateFRom: state,
+                statee: influencingNumber,
+              );
           break;
 
         default:
@@ -143,11 +157,14 @@ class CounterListController extends StateNotifier<List<String>> {
   void addToList({
     required String action,
     required String type,
-    required String influence,
-    required String statee,
-    required String stateFRom,
+    required double influence,
+    required double statee,
+    required double stateFRom,
   }) {
-    state = [...state, 'You $action $influence $type $statee  -->  $stateFRom'];
+    state = [
+      ...state,
+      'You $action ${influence.toStringAsFixed(1).replaceAll(RegExp(r'\.0$'), '')} $type ${statee.toStringAsFixed(1).replaceAll(RegExp(r'\.0$'), '')}  -->  ${stateFRom.toStringAsFixed(1).replaceAll(RegExp(r'\.0$'), '')}'
+    ];
   }
 
   void resetList() {

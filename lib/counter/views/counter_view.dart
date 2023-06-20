@@ -5,6 +5,7 @@ import 'package:doinz/utils/app_extensions.dart';
 import 'package:doinz/utils/specific_size_text_exrension.dart';
 import 'package:doinz/utils/widgets/click_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -64,7 +65,7 @@ class CounterView extends ConsumerWidget {
                                   .read(counterListControllerProvider.notifier)
                                   .resetList();
                             },
-                          ),
+                          ).fadeIn(delay: 0.ms, animatiomDuration: 200.ms),
                     counterValueFromController
                         .toStringAsFixed(1)
                         .replaceAll(RegExp(r'\.0$'), '')
@@ -90,9 +91,14 @@ class CounterView extends ConsumerWidget {
                     actionsFromController.length,
                     (index) => Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: actionsFromController[index].txt14(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      child: actionsFromController[index]
+                          .txt14(
+                            fontWeight: FontWeight.bold,
+                          )
+                          .fadeInFromBottom(
+                            delay: 0.ms,
+                            animatiomDuration: 200.ms,
+                          ),
                     ),
                   ),
               ],

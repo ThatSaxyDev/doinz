@@ -35,8 +35,39 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_screenutil: ^5.6.1
+  flutter_riverpod: ^2.2.0
+  fpdart: ^0.3.0
+  shared_preferences: ^2.0.15
+  http: ^0.13.5
+  flutter_animate: ^1.0.0
+  flutter_svg: ^2.0.2
+  uuid: ^3.0.6
+  file_picker: ^5.2.2
+  phosphor_flutter: ^1.4.0
+  intl: ^0.18.0
+  url_launcher: ^6.1.10
+  loading_animation_widget: ^1.2.0+3
+  smooth_page_indicator: ^1.1.0
+  cached_network_image: ^3.2.3
+  liquid_pull_to_refresh: ^3.0.1
+  carousel_slider: ^4.2.1
+  pinput: ^2.2.31
+  image_picker: ^0.8.7+5
+  glass: ^1.0.1+1
+  flutter_secure_storage: ^8.0.0
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
+  local_hero: ^0.2.0
+  substring_highlight: ^1.0.33
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.12.0
+  build_runner: ^2.3.2
+  riverpod_lint: ^1.0.1
+  custom_lint:
+  flutter_native_splash: ^2.2.16
+  isar_generator: ^3.1.0+1
   flutter_test:
     sdk: flutter
 

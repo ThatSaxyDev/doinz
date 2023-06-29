@@ -1,5 +1,4 @@
 import 'package:doinz/counter/views/counter_view.dart';
-import 'package:doinz/pizza/views/pizza_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +30,7 @@ class Doinz extends StatelessWidget {
               brightness: Brightness.dark,
               useMaterial3: true,
             ),
-            home: const PizzaView(),
+            home: const CounterView(),
           );
         });
   }

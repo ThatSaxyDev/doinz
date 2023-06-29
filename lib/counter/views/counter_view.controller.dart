@@ -1,10 +1,4 @@
-import 'dart:async';
-
-import 'package:doinz/utils/app_extensions.dart';
-import 'package:doinz/utils/snack_bar.dart';
-import 'package:doinz/utils/type_defs.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+part of 'counter_view.dart';
 
 final counterViewControllerProvider =
     StateNotifierProvider<CounterViewController, double>((ref) {

@@ -1,4 +1,4 @@
-import 'package:doinz/counter/views/counter_view_controller.dart';
+import 'package:doinz/counter/views/counter_view.dart';
 import 'package:doinz/theme/palette.dart';
 import 'package:doinz/utils/app_extensions.dart';
 import 'package:doinz/utils/keyboard_utils.dart';

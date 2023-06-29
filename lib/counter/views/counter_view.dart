@@ -1,14 +1,19 @@
-import 'package:doinz/counter/views/counter_view_controller.dart';
+import 'dart:async';
+
 import 'package:doinz/counter/widgets/instruction_input_widget.dart';
 import 'package:doinz/utils/app_constants.dart';
 import 'package:doinz/utils/app_extensions.dart';
+import 'package:doinz/utils/snack_bar.dart';
 import 'package:doinz/utils/specific_size_text_exrension.dart';
+import 'package:doinz/utils/type_defs.dart';
 import 'package:doinz/utils/widgets/click_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+
+part '../views/counter_view.controller.dart';
 
 class CounterView extends ConsumerWidget {
   const CounterView({super.key});

@@ -1,3 +1,4 @@
+import 'package:doinz/base_nav/views/base_nav_view.dart';
 import 'package:doinz/counter/views/counter_view.dart';
 import 'package:doinz/webb/views/web_view.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class Doinz extends StatelessWidget {
               brightness: Brightness.dark,
               useMaterial3: true,
             ),
-            home: const WebView(),
+            home: const BaseNavWrapper(),
           );
         });
   }
